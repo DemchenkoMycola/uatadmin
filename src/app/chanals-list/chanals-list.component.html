@@ -2,6 +2,8 @@
   <li class="chanal-item" *ngFor="let item of list">
     <span>id: {{item.payload.doc.data().chanalId}}</span>
     <span>name: {{item.payload.doc.data().chanalName}}</span>
-    <button (click)="deleteChanal(item.payload.doc.id)">del</button>
+    <button mat-mini-fab color="warn" (click)="deleteChanal(item.payload.doc.id)">
+      <mat-icon>delete</mat-icon>
+    </button>
   </li>
 </ul>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+
 import { ChanalsService } from '../service/chanals.service';
 
 @Component({
@@ -8,21 +10,24 @@ import { ChanalsService } from '../service/chanals.service';
 })
 export class AddChanalComponent implements OnInit {
 
-  constructor(private chanalService: ChanalsService ) { }
+  form: FormGroup;
+  chanalName = new FormControl('', Validators.required);
+  chanalId = new FormControl('', Validators.required);
 
-  chanal = {
-    chanalId: '',
-    chanalName: ''
-  };
+  constructor(private chanalService: ChanalsService, fb: FormBuilder ) {
+    this.form = fb.group({
+      chanalName: this.chanalName,
+      chanalId: this.chanalId
+    });
+  }
+
+
 
   ngOnInit(): void {
   }
-  submit(): void {
-    this.chanalService.addChanal(this.chanal);
-    this.chanal = {
-      chanalId: '',
-      chanalName: ''
-    };
+  onSubmit(): void {
+    this.chanalService.addChanal(this.form.value);
+    this.form.reset();
   }
 
 }
