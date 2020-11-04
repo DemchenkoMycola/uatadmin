@@ -17,13 +17,15 @@ import { MaterialModule } from './material/material.module';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
+import { EditChannelComponent } from './edit-channel/edit-channel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ChanalsListComponent,
-    AddChanalComponent
+    AddChanalComponent,
+    EditChannelComponent
   ],
   imports: [
     BrowserModule,

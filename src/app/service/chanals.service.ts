@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import {rejects} from 'assert';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,10 @@ export class ChanalsService {
       this.firestore.collection('Chanals').add(chanal).then(res => {}, err => reject(err));
     });
   }
-
+  updateChannel(channhel: {}): any{}
+  getChannelById(id): any{
+    return this.firestore.firestore.collection('Chanals').doc(id).get().then((r) => r);
+  }
   deleteChanal(chanalId): any{
     return this.firestore.collection('Chanals').doc(chanalId).delete();
   }
