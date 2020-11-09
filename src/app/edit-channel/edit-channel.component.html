@@ -1,7 +1,7 @@
-<form [formGroup]="form" (ngSubmit)="update()">
+<form [formGroup]="form" (ngSubmit)="update(form)" *ngIf="form">
   <label>Chanal Id</label>
   <input type="text" formControlName="chanalId">
   <label>Chanal Name</label>
   <input type="text" formControlName="chanalName">
-  <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Create</button>
+  <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Update</button>
 </form>

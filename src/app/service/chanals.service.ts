@@ -18,7 +18,9 @@ export class ChanalsService {
       this.firestore.collection('Chanals').add(chanal).then(res => {}, err => reject(err));
     });
   }
-  updateChannel(channhel: {}): any{}
+  updateChannel(id, value): any{
+    this.firestore.firestore.collection('Chanals').doc(id).set(value);
+  }
   getChannelById(id): any{
     return this.firestore.firestore.collection('Chanals').doc(id).get().then((r) => r);
   }

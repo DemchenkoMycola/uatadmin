@@ -14,22 +14,20 @@ export class EditChannelComponent implements OnInit {
 
   id: '';
   form: FormGroup;
-  chanalName = new FormControl('', Validators.required);
-  chanalId = new FormControl('', Validators.required);
 
-  constructor(private chanalService: ChanalsService, fb: FormBuilder, private activatedRoute: ActivatedRoute) {
-    this.form = fb.group({
-      chanalName: this.chanalName,
-      chanalId: this.chanalId
-    });
-  }
+  constructor(private chanalService: ChanalsService, private activatedRoute: ActivatedRoute, public fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.params.id;
     this.chanalService.getChannelById(this.id).then(a => {
-      this.chanalId = a.data().chanalId;
-      this.chanalName = a.data().chanalName;
+      this.form = this.fb.group({
+        chanalId: [a.data().chanalId, Validators.required],
+        chanalName: [a.data().chanalName, Validators.required]
+      });
     });
   }
-  update(): void{}
+  update(form): void{
+    this.chanalService.updateChannel(this.id, form.value);
+    this.form.reset();
+  }
 }
