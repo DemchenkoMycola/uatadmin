@@ -1,7 +1,0 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <label>Chanal Id</label>
-  <input type="text" formControlName="chanalId">
-  <label>Chanal Name</label>
-  <input type="text" formControlName="chanalName">
-  <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Create</button>
-</form>

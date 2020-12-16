@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
-import { ChanalsService } from '../service/chanals.service';
+import { ChannelsService } from '../service/channels.service';
 
 @Component({
   selector: 'app-edit-channel',
@@ -15,19 +15,19 @@ export class EditChannelComponent implements OnInit {
   id: '';
   form: FormGroup;
 
-  constructor(private chanalService: ChanalsService, private activatedRoute: ActivatedRoute, public fb: FormBuilder) {}
+  constructor(private channelService: ChannelsService, private activatedRoute: ActivatedRoute, public fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.params.id;
-    this.chanalService.getChannelById(this.id).then(a => {
+    this.channelService.getChannelById(this.id).then(a => {
       this.form = this.fb.group({
-        chanalId: [a.data().chanalId, Validators.required],
-        chanalName: [a.data().chanalName, Validators.required]
+        channelId: [a.data().channelId, Validators.required],
+        channelName: [a.data().channelName, Validators.required]
       });
     });
   }
   update(form): void{
-    this.chanalService.updateChannel(this.id, form.value);
+    this.channelService.updateChannel(this.id, form.value);
     this.form.reset();
   }
 }

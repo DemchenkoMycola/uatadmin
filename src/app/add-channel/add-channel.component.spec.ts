@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChanalsListComponent } from './chanals-list.component';
+import { AddChannelComponent } from './add-channel.component';
 
-describe('ChanalsListComponent', () => {
-  let component: ChanalsListComponent;
-  let fixture: ComponentFixture<ChanalsListComponent>;
+describe('AddChanalComponent', () => {
+  let component: AddChannelComponent;
+  let fixture: ComponentFixture<AddChannelComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ChanalsListComponent ]
+      declarations: [ AddChannelComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ChanalsListComponent);
+    fixture = TestBed.createComponent(AddChannelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

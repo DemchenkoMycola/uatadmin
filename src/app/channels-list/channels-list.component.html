@@ -1,11 +1,11 @@
 <ul>
   <li class="chanal-item" *ngFor="let item of list">
-    <span>id: {{item.payload.doc.data().chanalId}}</span>
-    <span>name: {{item.payload.doc.data().chanalName}}</span>
+    <span>id: {{item.payload.doc.data().channelId}}</span>
+    <span>name: {{item.payload.doc.data().channrlName}}</span>
     <a mat-mini-fab routerLink="/editChannel/{{item.payload.doc.id}}">
       <mat-icon>edit</mat-icon>
     </a>
-    <button mat-mini-fab color="warn" (click)="deleteChanal(item.payload.doc.id)">
+    <button mat-mini-fab color="warn" (click)="deleteChannel(item.payload.doc.id)">
       <mat-icon>delete</mat-icon>
     </button>
   </li>

@@ -4,8 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { ChanalsListComponent } from './chanals-list/chanals-list.component';
-import { AddChanalComponent } from './add-chanal/add-chanal.component';
+import { ChannelsListComponent } from './channels-list/channels-list.component';
+import { AddChannelComponent } from './add-channel/add-channel.component';
 
 import { environment } from 'src/environments/environment';
 
@@ -23,8 +23,8 @@ import { EditChannelComponent } from './edit-channel/edit-channel.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    ChanalsListComponent,
-    AddChanalComponent,
+    ChannelsListComponent,
+    AddChannelComponent,
     EditChannelComponent
   ],
   imports: [
