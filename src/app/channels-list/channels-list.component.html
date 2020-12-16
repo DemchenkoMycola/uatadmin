@@ -1,7 +1,7 @@
 <ul>
   <li class="chanal-item" *ngFor="let item of list">
     <span>id: {{item.payload.doc.data().channelId}}</span>
-    <span>name: {{item.payload.doc.data().channrlName}}</span>
+    <span>name: {{item.payload.doc.data().channelName}}</span>
     <a mat-mini-fab routerLink="/editChannel/{{item.payload.doc.id}}">
       <mat-icon>edit</mat-icon>
     </a>
